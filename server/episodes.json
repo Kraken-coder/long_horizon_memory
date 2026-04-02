@@ -1,0 +1,357 @@
+[
+  {
+    "episode_id": 1,
+    "conversation_domain": "education_ai",
+    "difficulty": "easy",
+    "string_relevant_messages": [
+      {
+        "text": "I am building an AI system to generate multiple-choice questions from lecture notes but many outputs are shallow.",
+        "isRelevant": true
+      },
+      {
+        "text": "The questions become repetitive across different note chunks.",
+        "isRelevant": true
+      },
+      {
+        "text": "I want more analysis and application style questions, not pure recall.",
+        "isRelevant": true
+      },
+      {
+        "text": "I bought new running shoes and started morning jogging.",
+        "isRelevant": false
+      },
+      {
+        "text": "I need answer checking with explanations in the same pipeline.",
+        "isRelevant": true
+      },
+      {
+        "text": "Retrieved context is sometimes irrelevant or too long.",
+        "isRelevant": true
+      },
+      {
+        "text": "I want the assistant to adapt across subjects and difficulty levels.",
+        "isRelevant": true
+      }
+    ]
+  },
+  {
+    "episode_id": 2,
+    "conversation_domain": "software_debugging",
+    "difficulty": "easy",
+    "string_relevant_messages": [
+      {
+        "text": "My Python CSV processing script gets very slow for large files.",
+        "isRelevant": true
+      },
+      {
+        "text": "Memory usage spikes and occasionally crashes the process.",
+        "isRelevant": true
+      },
+      {
+        "text": "I want to profile the code to find the exact bottleneck.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am learning watercolor painting in my free time.",
+        "isRelevant": false
+      },
+      {
+        "text": "Chunked processing might help but I need clean implementation.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am unsure whether pandas is really the main problem.",
+        "isRelevant": true
+      }
+    ]
+  },
+  {
+    "episode_id": 3,
+    "conversation_domain": "career_guidance",
+    "difficulty": "medium",
+    "string_relevant_messages": [
+      {
+        "text": "I am deciding between machine learning and full-stack development.",
+        "isRelevant": true
+      },
+      {
+        "text": "I enjoy both model building and user-facing app development.",
+        "isRelevant": true
+      },
+      {
+        "text": "I have projects in both areas but limited depth in each.",
+        "isRelevant": true
+      },
+      {
+        "text": "I want to know which path has better long-term stability.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am picking a marathon club for this semester.",
+        "isRelevant": false
+      },
+      {
+        "text": "I need a plan that keeps options open while building expertise.",
+        "isRelevant": true
+      },
+      {
+        "text": "My laptop keyboard backlight recently stopped working.",
+        "isRelevant": false
+      }
+    ]
+  },
+  {
+    "episode_id": 4,
+    "conversation_domain": "health_lifestyle",
+    "difficulty": "medium",
+    "string_relevant_messages": [
+      {
+        "text": "I sleep late because of workload and screen time.",
+        "isRelevant": true
+      },
+      {
+        "text": "Even when I go to bed early I struggle to fall asleep.",
+        "isRelevant": true
+      },
+      {
+        "text": "I cannot follow sleep hygiene consistently in college.",
+        "isRelevant": true
+      },
+      {
+        "text": "I drink caffeine and wonder how much it affects sleep.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need a sustainable routine without drastic daily changes.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am comparing cameras for landscape photography.",
+        "isRelevant": false
+      },
+      {
+        "text": "I am looking up sourdough starter maintenance tips.",
+        "isRelevant": false
+      }
+    ]
+  },
+  {
+    "episode_id": 5,
+    "conversation_domain": "ai_system_design",
+    "difficulty": "hard",
+    "string_relevant_messages": [
+      {
+        "text": "I am designing a multi-agent system with planning, execution, and validation agents.",
+        "isRelevant": true
+      },
+      {
+        "text": "Agents sometimes produce conflicting outputs and consensus is hard.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am evaluating whether to use a central orchestrator.",
+        "isRelevant": true
+      },
+      {
+        "text": "Shared memory synchronization causes redundant records.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need scalable modular architecture for agent coordination.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am repainting my apartment kitchen next week.",
+        "isRelevant": false
+      },
+      {
+        "text": "I am comparing compact mechanical keyboards for travel.",
+        "isRelevant": false
+      },
+      {
+        "text": "I need conflict resolution policies and confidence aggregation.",
+        "isRelevant": true
+      }
+    ]
+  },
+  {
+    "episode_id": 6,
+    "conversation_domain": "entrepreneurship",
+    "difficulty": "hard",
+    "string_relevant_messages": [
+      {
+        "text": "I want to validate an attendance automation startup idea.",
+        "isRelevant": true
+      },
+      {
+        "text": "Privacy and transparency around location data are major concerns.",
+        "isRelevant": true
+      },
+      {
+        "text": "The product should feel seamless with minimal manual input.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need a scaling strategy for multiple institutions.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need a practical roadmap from idea to execution.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am buying a new gaming laptop this semester.",
+        "isRelevant": false
+      },
+      {
+        "text": "I am interested in fantasy football statistics this season.",
+        "isRelevant": false
+      },
+      {
+        "text": "I need compliance planning for regional privacy regulations.",
+        "isRelevant": true
+      }
+    ]
+  },
+  {
+    "episode_id": 7,
+    "conversation_domain": "customer_support_ops",
+    "difficulty": "hard",
+    "string_relevant_messages": [
+      {
+        "text": "Our support queue has duplicate complaints that hide urgent billing incidents.",
+        "isRelevant": true
+      },
+      {
+        "text": "We need triage rules that prioritize payment failures and account lockouts.",
+        "isRelevant": true
+      },
+      {
+        "text": "Agents need concise memory of prior customer context across channels.",
+        "isRelevant": true
+      },
+      {
+        "text": "I baked banana bread for the first time yesterday.",
+        "isRelevant": false
+      },
+      {
+        "text": "False urgency labels are causing SLA breaches for real critical tickets.",
+        "isRelevant": true
+      },
+      {
+        "text": "Escalation criteria must be deterministic for audit review.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need recommendations for budget earbuds with good bass.",
+        "isRelevant": false
+      },
+      {
+        "text": "We also need multilingual intent normalization before routing.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am planning a weekend road trip itinerary.",
+        "isRelevant": false
+      },
+      {
+        "text": "The final system should reduce first response time without hurting resolution quality.",
+        "isRelevant": true
+      }
+    ]
+  },
+  {
+    "episode_id": 8,
+    "conversation_domain": "research_workflow",
+    "difficulty": "hard",
+    "string_relevant_messages": [
+      {
+        "text": "I am running a literature review agent but citation quality is inconsistent.",
+        "isRelevant": true
+      },
+      {
+        "text": "The agent confuses survey papers with primary empirical studies.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need memory slots reserved for methodology, dataset, and metrics.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am collecting retro game cartridges as a hobby.",
+        "isRelevant": false
+      },
+      {
+        "text": "Near-duplicate abstracts cause redundant summaries and wasted context window.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need deterministic ranking criteria for relevance and novelty.",
+        "isRelevant": true
+      },
+      {
+        "text": "I watched three documentaries this week.",
+        "isRelevant": false
+      },
+      {
+        "text": "The final output should support reproducible evidence tracing.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am comparing standing desks for my room.",
+        "isRelevant": false
+      },
+      {
+        "text": "I need confidence-calibrated summaries for uncertain findings.",
+        "isRelevant": true
+      }
+    ]
+  },
+  {
+    "episode_id": 9,
+    "conversation_domain": "security_incident_response",
+    "difficulty": "hard",
+    "string_relevant_messages": [
+      {
+        "text": "We are simulating incident response for suspicious authentication spikes.",
+        "isRelevant": true
+      },
+      {
+        "text": "Memory should retain indicators of compromise and timeline milestones.",
+        "isRelevant": true
+      },
+      {
+        "text": "The team misses lateral movement clues when alerts are noisy.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am practicing fingerstyle guitar every evening.",
+        "isRelevant": false
+      },
+      {
+        "text": "Containment actions must be prioritized before low-risk anomalies.",
+        "isRelevant": true
+      },
+      {
+        "text": "I need deterministic scoring for postmortem correctness and coverage.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am trying different coffee brewing methods this month.",
+        "isRelevant": false
+      },
+      {
+        "text": "Evidence provenance is critical for compliance and legal review.",
+        "isRelevant": true
+      },
+      {
+        "text": "I am updating my home theater speaker placement.",
+        "isRelevant": false
+      },
+      {
+        "text": "The final system should minimize false positives while preserving recall.",
+        "isRelevant": true
+      }
+    ]
+  }
+]
