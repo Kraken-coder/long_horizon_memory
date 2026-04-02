@@ -78,4 +78,5 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 
 # Run the FastAPI server using python -m to avoid shebang issues with moved venvs
 # Run from the project directory so 'server.app' is findable
+WORKDIR /app/project
 CMD ["python", "-m", "uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]

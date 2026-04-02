@@ -48,13 +48,25 @@ except (ImportError, ModuleNotFoundError):
 
 
 # Create the app with web interface and README integration
+try:
+    from openenv.core.env_server.web_interface import mount_web_interface
+    HAS_WEB_INTERFACE = True
+except ImportError:
+    HAS_WEB_INTERFACE = False
+
 app = create_app(
     LongHorizonMemoryEnvironment,
     LongHorizonMemoryAction,
     LongHorizonMemoryObservation,
     env_name="long_horizon_memory",
-    max_concurrent_envs=1,  # increase this number to allow more concurrent WebSocket sessions
+    max_concurrent_envs=1,
 )
+
+if HAS_WEB_INTERFACE:
+    try:
+        mount_web_interface(app, env_name="long_horizon_memory")
+    except Exception as e:
+        print(f"Failed to mount web interface: {e}")
 
 
 @app.get("/health")
