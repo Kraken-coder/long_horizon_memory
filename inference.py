@@ -19,9 +19,12 @@ except (ImportError, ModuleNotFoundError):
         from long_horizon_memory.models import LongHorizonMemoryAction, LongHorizonMemoryObservation
         from long_horizon_memory.server.long_horizon_memory_environment import LongHorizonMemoryEnvironment
 
-API_KEY = os.getenv("HF_TOKEN") or os.getenv("OPENAI_API_KEY")
+HF_TOKEN = os.getenv("HF_TOKEN")
 API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
+# Optional — if you use from_docker_image():
+LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
+
 BENCHMARK = os.getenv("MY_ENV_BENCHMARK", "long_horizon_memory")
 MAX_STEPS = int(os.getenv("MAX_STEPS", "20"))
 SUCCESS_SCORE_THRESHOLD = float(os.getenv("SUCCESS_SCORE_THRESHOLD", "0.7"))
@@ -180,10 +183,10 @@ def run_task(task_name: str, llm: OpenAI) -> Tuple[bool, List[float]]:
 
 
 def main() -> None:
-    if not API_KEY:
-        raise ValueError("HF_TOKEN or OPENAI_API_KEY must be set for inference.")
+    if not HF_TOKEN:
+        raise ValueError("HF_TOKEN must be set for inference.")
 
-    llm = OpenAI(api_key=API_KEY, base_url=API_BASE_URL)
+    llm = OpenAI(api_key=HF_TOKEN, base_url=API_BASE_URL)
     for task in TASKS:
         run_task(task, llm)
 
