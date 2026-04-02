@@ -48,18 +48,6 @@ except (ImportError, ModuleNotFoundError):
 
 
 # Create the app with web interface and README integration
-try:
-    import openenv.core.env_server.web_interface as web_interface
-    from openenv.core.env_server.web_interface import mount_web_interface
-    HAS_WEB_INTERFACE = True
-except ImportError as e:
-    print(f"Import error for web_interface: {e}")
-    import sys
-    print(f"Python path: {sys.path}")
-    HAS_WEB_INTERFACE = False
-
-print(f"HAS_WEB_INTERFACE: {HAS_WEB_INTERFACE}")
-
 app = create_app(
     LongHorizonMemoryEnvironment,
     LongHorizonMemoryAction,
@@ -67,14 +55,6 @@ app = create_app(
     env_name="long_horizon_memory",
     max_concurrent_envs=1,
 )
-
-if HAS_WEB_INTERFACE:
-    print("Attempting to mount web interface manually...")
-    try:
-        mount_web_interface(app, env_name="long_horizon_memory")
-        print("Web interface mounted successfully.")
-    except Exception as e:
-        print(f"Failed to mount web interface: {e}")
 
 
 @app.get("/health")
