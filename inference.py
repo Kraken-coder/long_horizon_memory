@@ -6,7 +6,10 @@ import json
 import os
 from typing import List, Optional, Tuple
 
+from dotenv import load_dotenv
 from openai import OpenAI
+
+load_dotenv()
 
 try:
     from .models import LongHorizonMemoryAction, LongHorizonMemoryObservation
@@ -36,14 +39,33 @@ def log_start(task: str, env: str, model: str) -> None:
     print(f"[START] task={task} env={env} model={model}", flush=True)
 
 
-def log_step(step: int, action: str, reward: float, done: bool, error: Optional[str]) -> None:
+def log_step(
+    step: int,
+    action: str,
+    reward: float,
+    done: bool,
+    error: Optional[str],
+    metadata: dict = None,
+) -> None:
     done_val = str(done).lower()
     error_val = error if error else "null"
-    print(
-        f"[STEP] step={step} action={action} reward={reward:.2f} "
-        f"done={done_val} error={error_val}",
-        flush=True,
-    )
+
+    base_log = f"[STEP] step={step} action={action} reward={reward:.2f} done={done_val} error={error_val}"
+
+    if metadata:
+        memory_ages = metadata.get("memory_ages", [])
+        avg_age = metadata.get("avg_memory_age", 0)
+        correct = metadata.get("correct_in_memory", 0)
+        incorrect = metadata.get("incorrect_in_memory", 0)
+
+        age_info = ""
+        if memory_ages:
+            age_info = f" mem_ages={memory_ages} avg_age={avg_age:.1f}"
+
+        decay_info = f" correct={correct} incorrect={incorrect}"
+        print(f"{base_log}{age_info}{decay_info}", flush=True)
+    else:
+        print(base_log, flush=True)
 
 
 def log_end(success: bool, steps: int, rewards: List[float]) -> None:
@@ -151,7 +173,7 @@ def run_task(task_name: str, llm: OpenAI) -> Tuple[bool, List[float]]:
             error = observation.metadata.get("last_action_error")
 
             rewards.append(reward)
-            log_step(step, action_to_text(action), reward, done, error)
+            log_step(step, action_to_text(action), reward, done, error, observation.metadata)
 
             if done:
                 score = float(observation.metadata.get("task_score", 0.0))
